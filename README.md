@@ -1,4 +1,4 @@
-Screen Shot 2021-02-08 at 8.44.14 AM# JavaScriptProject
+# JavaScriptProject
 
 
 ## Background
