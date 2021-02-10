@@ -18,7 +18,7 @@ export default class Ball {
 
     move(ctx, dy, cursorX, cursorY) {
         this.draw(ctx);
-        this.y -= dy;
+        this.y += dy;
         // this.x = cursorX - this.diameter/2;
         // this.y = cursorY - this.diameter/2;
     }

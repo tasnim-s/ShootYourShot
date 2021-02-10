@@ -10,9 +10,11 @@ let cursorX;
 let cursorY;
 let hold = false;
 let count = 0;
-let shiftSpeed = 5;
+let shiftSpeed = 2;
 let level = 3;
-const gravity = 9;
+const gravity = 9.81;
+const friction = .98;
+let score = 0;
 
 // Mouse events
 document.addEventListener("mousemove", mouseHandler, false);
@@ -32,31 +34,41 @@ function mouseHandler(e) {
     cursorX = e.clientX - canvas.offsetLeft;
     cursorY = e.clientY;
 }
+
+function bucket() {
+    
+}
 // Objects
 const basketball = new Ball(...ballHome);
 const backboard = new BackBoard(canvas.width/2, canvas.height/2)
 
 function animate() {
-    if (count === 40) {
+    let dy = 0;
+    if (count === 50) {
         hold = false;
         count = 0;
     } 
     console.log(count);
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     
     backboard.draw(ctx);
+
     if(backboard.x + backboard.width > canvas.width || backboard.x < 0)  {
         shiftSpeed = -shiftSpeed;
     }
+
     if(level > 2) backboard.move(ctx, shiftSpeed);
     basketball.draw(ctx);
-    if (basketball.y + basketball.diameter < canvas.height) basketball.move(ctx, -gravity);
+    
+    if (basketball.y + basketball.diameter < canvas.height) dy += gravity;
     
     if (hold) {
-        count += 1;
-        
-        basketball.move(ctx, count);
+        count += .5;
+        dy -= count;
     }
+
+    basketball.move(ctx, dy);
     // if(cursorX > 0 && cursorX < canvas.width && cursorY > 0 && cursorY < canvas.height) {
         
     //     // basketball.move(cursorX, cursorY, ctx);
