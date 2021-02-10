@@ -1,9 +1,10 @@
 @import "./reset.scss";
 
-
+body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 canvas {
     border: 1px solid black;
-    position: absolute;
-    left: 25%;
-    top: 5%;
 }

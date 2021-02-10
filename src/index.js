@@ -35,12 +35,14 @@ function mouseHandler(e) {
     cursorY = e.clientY;
 }
 
-function bucket() {
-    
-}
+
 // Objects
 const basketball = new Ball(...ballHome);
 const backboard = new BackBoard(canvas.width/2, canvas.height/2)
+
+// function scoreBucket() {
+//     if ()
+// }
 
 function animate() {
     let dy = 0;
