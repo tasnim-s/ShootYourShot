@@ -1,9 +1,16 @@
 export default class BackBoard {
-    constructor(x, y) {
+    constructor(game) {
+        this.game = game;
         this.width = 213;
         this.height = 137;
-        this.x = x - this.width/2;
-        this.y = y - this.height * 2;
+        this.reset();
+    }
+
+    reset() {
+        this.x = this.game.width/2 - this.width/2;
+        this.y = this.game.height/2 - this.height * 2;
+        this.dx = 0;
+        this.dy = 0;
         this.innerRect = {
             width: 81,
             height: 66,
@@ -11,45 +18,47 @@ export default class BackBoard {
         this.innerRect.x = this.x + this.innerRect.width/1.25;
         this.innerRect.y = this.y + this.innerRect.height/1.5;
         this.line = {
-            x1: this.innerRect.x,
+            x1: this.innerRect.x - 5,
             y: this.innerRect.y + this.innerRect.height,
-            x2: this.innerRect.x + this.innerRect.width
-        }
-
+            x2: this.innerRect.x + this.innerRect.width + 5
+        };
     }
 
-    draw(ctx) {
+    draw() {
         // backboard
-        ctx.beginPath();
-        ctx.rect(this.x, this.y, this.width, this.height);
-        ctx.strokeStyle = "#dadde1";
-        ctx.lineWidth = 5;
-        ctx.stroke();
-        ctx.closePath();
+        this.game.ctx.beginPath();
+        this.game.ctx.rect(this.x, this.y, this.width, this.height);
+        this.game.ctx.strokeStyle = "#dadde1";
+        this.game.ctx.lineWidth = 5;
+        this.game.ctx.stroke();
+        this.game.ctx.closePath();
 
         // inner aim area
-        ctx.beginPath();
-        ctx.rect(this.innerRect.x, this.innerRect.y, this.innerRect.width, this.innerRect.height);
-        ctx.strokeStyle = "#dadde1";
-        ctx.lineWidth = 5;
-        ctx.stroke();
-        ctx.closePath();
+        this.game.ctx.beginPath();
+        this.game.ctx.rect(this.innerRect.x, this.innerRect.y, this.innerRect.width, this.innerRect.height);
+        this.game.ctx.strokeStyle = "#dadde1";
+        this.game.ctx.lineWidth = 5;
+        this.game.ctx.stroke();
+        this.game.ctx.closePath();
 
         // rim
-        ctx.beginPath();
-        ctx.moveTo(this.line.x1 - ctx.lineWidth, this.line.y);
-        ctx.lineTo(this.line.x2 + ctx.lineWidth, this.line.y);
-        ctx.strokeStyle = "red";
-        ctx.lineWidth = 8;
-        ctx.stroke();
-        ctx.closePath();
+        this.game.ctx.beginPath();
+        this.game.ctx.moveTo(this.line.x1 - this.game.ctx.lineWidth, this.line.y);
+        this.game.ctx.lineTo(this.line.x2 + this.game.ctx.lineWidth, this.line.y);
+        this.game.ctx.strokeStyle = "red";
+        this.game.ctx.lineWidth = 8;
+        this.game.ctx.stroke();
+        this.game.ctx.closePath();
     }
 
-    move(ctx, dx) {
-        this.x += dx;
-        this.innerRect.x += dx;
-        this.line.x1 += dx;
-        this.line.x2 += dx;
-        this.draw(ctx);
+    update() {
+        if (this.x + this.width > this.game.width || this.x < 0) {
+            this.dx = -this.dx;
+        }
+        this.x += this.dx;
+        this.innerRect.x += this.dx;
+        this.line.x1 += this.dx;
+        this.line.x2 += this.dx;
     }
+
 }
