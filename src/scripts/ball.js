@@ -1,11 +1,11 @@
 export default class Ball {
     constructor(game) {
         this.ball = new Image();
-        this.ball.src = ".././dist/images/ball.png";
+        this.ball.src = ".././src/images/ball.png";
         this.game = game;
         this.gravity = 50;
         this.friction = .5;
-        this.miss = new Audio(".././dist/sounds/miss.mp3");
+        this.miss = new Audio(".././src/sounds/miss.mp3");
         this.reset();
     }
     reset() {

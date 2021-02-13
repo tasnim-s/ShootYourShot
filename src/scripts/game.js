@@ -13,7 +13,7 @@ export default class Game {
         this.scoreDiv = scoreDiv;
         this.score = 0;
         this.scored  = false;
-        this.swish = new Audio(".././dist/sounds/swish.mp3");
+        this.swish = new Audio(".././src/sounds/swish.mp3");
         this.running = false;
         
         new Controls(this);
