@@ -35,7 +35,7 @@ export default class Game {
 
     scoreBucket() {
         if (this.basketball.comingDown && this.basketball.x > this.backboard.line.x1 && this.basketball.x + this.basketball.diameter < this.backboard.line.x2 && this.basketball.y + this.basketball.diameter/2 > this.backboard.line.y) {
-            console.log("collision");
+            // console.log("collision");
             this.score++;
             this.basketball.comingDown = false;
             this.scored = true;
@@ -63,7 +63,6 @@ export default class Game {
     update(){
         if (!this.running) return;
         if(this.basketball.y + this.basketball.diameter > this.height || this.basketball.x + this.basketball.diameter > this.width || this.basketball.x < 0) {
-            // this.basketball.shooting = false;
             this.start();
             return;
         }

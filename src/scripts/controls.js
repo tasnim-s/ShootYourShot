@@ -2,7 +2,7 @@ export default class Controls {
     constructor(game) {
         game.ctx.canvas.addEventListener("mousedown", (e) => {
             game.basketball.pos2 = null;
-            console.log([e.clientX - game.ctx.canvas.offsetLeft, e.clientY - game.ctx.canvas.offsetTop]);
+            // console.log([e.clientX - game.ctx.canvas.offsetLeft, e.clientY - game.ctx.canvas.offsetTop]);
             game.basketball.shooting = true;
         }, false);
 
