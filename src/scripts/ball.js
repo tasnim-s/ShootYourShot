@@ -20,9 +20,9 @@ export default class Ball {
     }
 
     random() {
-        const spawnPoint = (Math.random() * this.game.width);
+        const spawnPoint = (Math.random() * (this.game.width - this.diameter));
         this.diameter = 70;
-        this.x = spawnPoint/2 - this.diameter/2;
+        this.x = spawnPoint;
         this.y = this.game.height - this.diameter/2 - this.diameter;
         this.dx = 0;
         this.dy = 0;

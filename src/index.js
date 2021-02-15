@@ -9,7 +9,6 @@ canvas.height = 800;
 
 let game = new Game(ctx, scoreDiv);
 
-
 function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -18,14 +17,6 @@ function animate() {
     game.scoreBucket();
     requestAnimationFrame(animate);
 }
-
-    
-    // if (score === 10) {
-    //     backboard.dx > 0 ? backboard.dx = 2 : backboard.dx = -2;
-    // } else if (score === 20) {
-    //     backboard.dx > 0 ? backboard.dx = 4 : backboard.dx = -4;
-    // }
-
 
 // Below is whats running
 animate();

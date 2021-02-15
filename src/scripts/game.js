@@ -29,6 +29,11 @@ export default class Game {
             this.basketball.reset();
         } else {
             this.basketball.random();
+            if (this.score >= 10) {
+                this.backboard.dx >= 0 ? this.backboard.dx = 2 : this.backboard.dx = -2;
+            } else if (this.score >= 20) {
+                this.backboard.dx >= 0 ? this.backboard.dx = 4 : this.backboard.dx = -4;
+            }
         }
         this.scored = false;
     }
@@ -66,6 +71,7 @@ export default class Game {
             this.start();
             return;
         }
+        
         this.backboard.update();
         this.basketball.update();
     }
