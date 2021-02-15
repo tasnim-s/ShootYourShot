@@ -2,7 +2,7 @@ export default class Ball {
     constructor(game) {
         this.ball = document.getElementById("ballImg");
         this.game = game;
-        this.gravity = 50;
+        this.gravity = 40;
         this.friction = .5;
         this.miss = document.getElementById("missNoise");
         this.reset();

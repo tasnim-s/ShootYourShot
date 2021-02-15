@@ -5,6 +5,8 @@
     <link rel="icon" href="./src/images/ball.png">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
+        integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
     <link rel="stylesheet" href="./dist/main.css">
     <title>ShootYourShot</title>
 </head>
@@ -12,10 +14,14 @@
     <div class="content">
         <div class="title">Shoot Your Shot 😉</div>
         <div class="author">a JavaScript game by Tasnim Saiduzzaman</div>
+        <div class="high-score-container">Current Best: <span id="best"></span></div>
         <div class="score-container">Score:<span id="score"></span></div>
-        <div class="howtoplay"><h2>How to Play</h2><p>Use your mouse to flick the ball towards the basket. Think you have what it takes yungblud?</p></div>
-        <a href="https://github.com/tasnim-s">GitHub</a>
-        <a href="https://www.linkedin.com/in/tasnim-s/">LinkedIn</a>
+        <div class="howtoplay"><h2>How to Play</h2><p>Legend has it, the one who can flick the ball with their mouse can enter a very secret society. A society of elite ballers. Some say if you can get the elusive 99 points highscore. you unlock the knowledge to Lebron James secret to eternal youth. Think you have what it takes yungblud?</p></div>
+        <div class="about-me">Find me at</div>
+        <div class="socials">
+            <a href="https://github.com/tasnim-s"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/tasnim-s/"><i class="fab fa-linkedin"></i></a>
+        </div>
         <img id="ballImg" src="./src/images/ball.png" alt="ball">
         <audio id="missNoise" src="./src/sounds/miss.mp3"></audio>
         <audio id="swishNoise" src="./src/sounds/swish.mp3"></audio>

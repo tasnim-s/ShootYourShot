@@ -11,6 +11,8 @@ export default class Game {
         this.backboard = new BackBoard(this);
         this.basketball = new Ball(this);
         this.scoreDiv = scoreDiv;
+        this.bestScore = document.getElementById("best");
+        this.bestScore.innerHTML = 0;
         this.score = 0;
         this.scored  = false;
         this.swish = document.getElementById("swishNoise");
@@ -22,6 +24,7 @@ export default class Game {
     start() {
         this.backboard.reset();
         if(!this.scored) {
+            if(this.score > this.bestScore.innerHTML) this.bestScore.innerHTML = this.score;
             this.score = 0;
             this.basketball.reset();
         } else {

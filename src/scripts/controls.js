@@ -9,8 +9,8 @@ export default class Controls {
         game.ctx.canvas.addEventListener("mouseup", (e) => {
             game.basketball.pos2 = [e.clientX - game.ctx.canvas.offsetLeft, e.clientY - game.ctx.canvas.offsetTop];
             const angle = Math.atan2(game.basketball.pos2[1] - game.basketball.pos1[1], game.basketball.pos2[0] - game.basketball.pos1[0]);
-            game.basketball.dx = Math.cos(angle) * 30;
-            game.basketball.dy = Math.sin(angle) * 30;
+            game.basketball.dx = Math.cos(angle) * 25;
+            game.basketball.dy = Math.sin(angle) * 25;
         }, false);
 
         document.addEventListener("keydown", (e) => {

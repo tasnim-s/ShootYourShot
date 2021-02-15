@@ -5,9 +5,10 @@
     justify-content: center;
     align-items: center;
     background: #f2a154;
+    color: #314e52;
 }
 canvas {
-    background: white;
+    background: #f7f6e7;
     margin: 5px 10px;
     border-radius: 3px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
@@ -35,6 +36,7 @@ img, audio {
         border-radius: 6px;
         padding-bottom: 0px;
         font-weight: 900;
+        margin-top: 20px;
     }
     .author {
         display: flex;
@@ -44,23 +46,38 @@ img, audio {
         padding: 10px;
         text-align: center;
     }
+    
+    .high-score-container {
+        padding: 10px 0;
+    }
 
     .score-container {
         display: flex;
         justify-content: space-around;
         align-items: center;
-        background: #dadde1;
+        background: #e7e6e1;
         box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px;
         border-radius: 6px;
         height: 30px;
         width: 200px;
         font-size: large;
+        margin-bottom: 30px;
     }
 
     .howtoplay {
         padding: 20px;
+        margin-bottom: 200px;
     }
-    a {
-        border: 1px solid black;
+    
+    .socials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+            font-size: 40px;
+            padding: 20px;
+            text-decoration: none;
+            color: #314e52;
+        }
     }
 }
