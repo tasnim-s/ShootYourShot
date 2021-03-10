@@ -48,15 +48,15 @@ export default class Ball {
             this.dy = this.gravity;
         }
 
-        if(this.comingDown && this.y + this.diameter*(5/6) > this.game.backboard.line.y) {
+        if(this.comingDown && this.y + this.diameter*(5/6) > this.game.rim.y) {
             
-            if(this.game.backboard.line.x1 > this.x  && this.game.backboard.line.x1 < this.x + this.diameter ) {
+            if(this.game.rim.x1 > this.x  && this.game.rim.x1 < this.x + this.diameter ) {
                 this.dy = -this.dy;
                 this.dy *= this.friction;
                 this.dx -= 5;
                 this.miss.play();
             }
-            else if(this.game.backboard.line.x2 > this.x  && this.game.backboard.line.x2 < this.x + this.diameter ) {
+            else if(this.game.rim.x2 > this.x  && this.game.rim.x2 < this.x + this.diameter ) {
                 this.dy = -this.dy;
                 this.dy *= this.friction;
                 this.dx += 5;

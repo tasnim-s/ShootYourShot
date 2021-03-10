@@ -1,6 +1,7 @@
 import BackBoard from "./backboard";
 import Ball from "./ball";
 import Controls from "./controls";
+import Rim from "./rim";
 
 
 export default class Game {
@@ -10,6 +11,7 @@ export default class Game {
         this.height = this.ctx.canvas.height;
         this.backboard = new BackBoard(this);
         this.basketball = new Ball(this);
+        this.rim = new Rim(this);
         this.scoreDiv = scoreDiv;
         this.bestScore = document.getElementById("best");
         this.bestScore.innerHTML = 0;
@@ -23,6 +25,7 @@ export default class Game {
 
     start() {
         this.backboard.reset();
+        this.rim.reset();
         if(!this.scored) {
             if(this.score > this.bestScore.innerHTML) this.bestScore.innerHTML = this.score;
             this.score = 0;
@@ -39,7 +42,7 @@ export default class Game {
     }
 
     scoreBucket() {
-        if (this.basketball.comingDown && this.basketball.x > this.backboard.line.x1 && this.basketball.x + this.basketball.diameter < this.backboard.line.x2 && this.basketball.y + this.basketball.diameter/2 > this.backboard.line.y) {
+        if (this.basketball.comingDown && this.basketball.x > this.rim.x1 && this.basketball.x + this.basketball.diameter < this.rim.x2 && this.basketball.y + this.basketball.diameter/2 > this.rim.y) {
             // console.log("collision");
             this.score++;
             this.basketball.comingDown = false;
@@ -53,7 +56,13 @@ export default class Game {
     
     draw() {
         this.backboard.draw();
+        if (this.basketball.dy <= 0) {
+            this.rim.draw();
+        }
         this.basketball.draw();
+        if(this.basketball.dy > 0) {
+            this.rim.draw();
+        }
         if(!this.running) {
             this.ctx.rect(0, 0, canvas.width, canvas.height);
             this.ctx.fillStyle = "#dadde1";
@@ -74,6 +83,7 @@ export default class Game {
         
         this.backboard.update();
         this.basketball.update();
+        this.rim.update();
     }
 
 }
