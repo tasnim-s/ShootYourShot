@@ -23,7 +23,7 @@ export default class BackBoard {
         // backboard
         this.game.ctx.beginPath();
         this.game.ctx.rect(this.x, this.y, this.width, this.height);
-        this.game.ctx.strokeStyle = "#dadde1";
+        this.game.ctx.strokeStyle = "#3c7c8b";
         this.game.ctx.lineWidth = 5;
         this.game.ctx.stroke();
         this.game.ctx.closePath();
@@ -31,7 +31,7 @@ export default class BackBoard {
         // inner aim area
         this.game.ctx.beginPath();
         this.game.ctx.rect(this.innerRect.x, this.innerRect.y, this.innerRect.width, this.innerRect.height);
-        this.game.ctx.strokeStyle = "#dadde1";
+        this.game.ctx.strokeStyle = "##3c7c8b";
         this.game.ctx.lineWidth = 5;
         this.game.ctx.stroke();
         this.game.ctx.closePath();
