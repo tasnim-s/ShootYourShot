@@ -1,15 +1,37 @@
-# JavaScriptProject
+Shoot Your Shot
+======
 
+*Shoot Your Shot* is a basketball shot game created using HTML Canvas and Vanilla Javascript. Players can play a easy to pick up game where they can throw a ball into a hoop to score points using their mouse to the views of the beautiful Venice Beach basketball courts.
 
-## Background
-A basketball game using HTML Canvas where users can use there mouse to point and aim towards a hoop that is is either stationary or moving in multitude of ways. *Shoot Your Shot*
+[Live Site](https://tasnimsaiduzzaman.com/ShootYourShot/)
 
-## Functionality & MVP
-* Users will be able to start game and turn on and off sound.
-* Users will start at initial state of level 0 where they try out 3 shots to get flow of game.
-* Users will be able to use mouse/keys to select trajectory and upong letting go of click/key, will launch ball.
+## Technologies Used
+* Javascript
+* HTML Canvas
+* HTML/SCSS
 
+## Features
 ![gif example](https://github.com/tasnim-s/ShootYourShot/blob/main/showcase.gif)
+
+* Players can shoot a ball with their mouse into hoop
+* Players will be able to view their highscores and their current score update live
+* Players will be able to move up in difficulty level as their current score streak increases
+
+## Challenges and Solutions
+
+* Ball movement and user chosen trajectory was calculated by taking starting and ending positon of mouse as well as trigonometry to calculate hyptonuse of vector.
+
+![BallTrig](https://github.com/tasnim-s/GitHubImages/blob/main/BallTrig.png)
+
+
+* Collision logic used to determine whether to update score to to reset the game
+
+![BallLogic](https://github.com/tasnim-s/GitHubImages/blob/main/BallLogic.png)
+
+
+* Game logic used to draw different game state on the canvas depending on user interaction
+
+![BallMenu](https://github.com/tasnim-s/GitHubImages/blob/main/BallMenu.png)
 
 ### Bonus
 * Users will be able to put their names in a leaderboard where their top score will be kept.
@@ -17,10 +39,3 @@ A basketball game using HTML Canvas where users can use there mouse to point and
 
 ## Wireframes
 ![Wireframe example](https://github.com/tasnim-s/JavaScriptProject/blob/main/BasketballGameWF.png)
-
-## Architecture and Technologies
-
-* Javascript for game logic
-* HTML Canvas for rendering
-* NBA STATs API for stats
-* Mongodb for storing leaderboard
